@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ArenaAllocator.hpp"
+#include "HeteroArenaAllocator/ArenaAllocator.hpp"
 
 auto useStackArena() {
 	StackArena<sizeof(int)> stackArena;

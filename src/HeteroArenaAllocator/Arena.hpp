@@ -15,7 +15,7 @@ private:
 	virtual auto _getWaterline()-> uint8_t*& = 0;
 };
 
-template <size_t size, size_t alignment = alignof(std::max_align_t)>
+template <size_t size, size_t alignment = alignof(long double)>
 class StackArena final : public Arena {
 public:
 	StackArena()

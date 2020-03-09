@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project ("HeteroArenaAllocator")
 
-# Add source to this project's executable.
-add_executable (HeteroArenaAllocator
-		"main.cpp")
+set(HETEROARENAALLOCATOR_LIST_DIR ${CMAKE_CURRENT_LIST_DIR})
+
+set(HETEROARENAALLOCATOR_INCLUDE_DIRS "${HETEROARENAALLOCATOR_LIST_DIR}/src"
+        PARENT_SCOPE)
