@@ -2,6 +2,9 @@
 #include <memory>
 
 class Arena {
+public:
+    virtual ~Arena() noexcept = default;
+
 private:
 	friend class ArenaAllocator;
 
