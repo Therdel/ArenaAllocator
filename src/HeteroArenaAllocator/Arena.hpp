@@ -1,5 +1,6 @@
 #pragma once
-#include <memory>
+#include <memory>	// std::unique_ptr
+#include <cstddef>	// std::max_align_t
 
 class Arena {
 public:
@@ -18,7 +19,7 @@ private:
 	virtual auto _getWaterline()-> uint8_t*& = 0;
 };
 
-template <size_t size, size_t alignment = alignof(long double)>
+template <size_t size, size_t alignment = alignof(std::max_align_t)>
 class StackArena final : public Arena {
 public:
 	StackArena()
