@@ -1,10 +1,17 @@
 ﻿cmake_minimum_required (VERSION 3.8)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project ("HeteroArenaAllocator")
 
-set(HETEROARENAALLOCATOR_LIST_DIR ${CMAKE_CURRENT_LIST_DIR})
+set(LIST_DIR ${CMAKE_CURRENT_LIST_DIR})
+set(INTERNAL_INCLUDE_DIRS
+    ${LIST_DIR}/src
+)
 
-set(HETEROARENAALLOCATOR_INCLUDE_DIRS "${HETEROARENAALLOCATOR_LIST_DIR}/src"
-        PARENT_SCOPE)
+# export config to parent CMakeLists
+set(HETEROARENAALLOCATOR_INCLUDE_DIRS
+    ${INTERNAL_INCLUDE_DIRS}
+    PARENT_SCOPE
+)
+
+# examples target (optional)
+add_subdirectory(examples EXCLUDE_FROM_ALL)
